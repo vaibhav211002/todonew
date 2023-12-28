@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(https://nasemul1.github.io/img_host/peakpx.jpg);
+  font-family: "Poppins", sans-serif;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#header ul {
+  display: flex;
+}
+
+#header ul li {
+  list-style: none;
+  padding: 15px 15px;
+}
+
+#header ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0s ease-in-out;
+  color: #000000;
+  font-weight: 400;
+}
+
+#header ul li a:hover {
+  border-bottom: 3px solid red;
+}
+
+#header ul li img {
+  margin-right: 30px;
+}
+
+.toggle {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  #header ul {
+    position: absolute;
+    top: 80px; /* Adjusted for better visibility */
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: #111;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .logo {
+    color: #fff;
+  }
+
+  #header.active1 ul {
+    opacity: 1;
+    height: calc(100vh - 80px); /* Adjusted for better visibility */
+  }
+
+  #header ul li a {
+    margin: 5px 0;
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .toggle {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-image: url(https://img.icons8.com/material-outlined/48/ffffff/menu--v1.png);
+    cursor: pointer;
+  }
+
+  #header.active1 .toggle {
+    background-image: url(https://img.icons8.com/material-rounded/48/ffffff/multiply--v1.png);
+    background-repeat: no-repeat;
+  }
+}
+
+/* For screens smaller than 576px (extra small devices) */
+@media (max-width: 575.98px) {
+	.card {
+	  width: 100%; /* Cards take full width */
+	}
+  }
+  
+  /* For screens between 576px and 767.98px (small devices) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+	.card {
+	  width: calc(50% - 20px); /* Two cards in a row, with margin */
+	}
+  }
+  
+  /* For screens between 768px and 991.98px (medium devices) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+	.card {
+	  width: calc(33.33% - 20px); /* Three cards in a row, with margin */
+	}
+  }
+  
+  /* For screens between 992px and 1199.98px (large devices) */
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+	.card {
+	  width: calc(25% - 20px); /* Four cards in a row, with margin */
+	}
+  }
+  
+  /* For screens 1200px and larger (extra large devices) */
+  @media (min-width: 1200px) {
+	.card {
+	  width: calc(20% - 20px); /* Five cards in a row, with margin */
+	}
+  }
+
+/* body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+} */
+
+.container {
+  width: 80%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+.task-form {
+  background-color: #8de7f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.task-input {
+  width: 100%;
+  height: 150px; /* Adjust the height of the textarea */
+  margin-bottom: 15px;
+  font-size: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+  /* background-color: #def6f9e9; */
+}
+
+.btn {
+  padding: 15px;
+  font-size: 18px;
+  background-color: #67eb6b;
+  color: #db4328;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #9aeaa3;
+}
+
+
+
+
+
+
+
+
+

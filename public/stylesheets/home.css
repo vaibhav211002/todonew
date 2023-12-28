@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(https://nasemul1.github.io/img_host/peakpx.jpg);
+  font-family: "Poppins", sans-serif;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+
+
+
+#header ul {
+  display: flex;
+}
+
+#header ul li {
+  list-style: none;
+  padding: 15px 15px;
+}
+
+#header ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0s ease-in-out;
+  color: #000000;
+  font-weight: 400;
+}
+
+#header ul li a:hover {
+  border-bottom: 3px solid red;
+}
+
+#header ul li img {
+  margin-right: 30px;
+}
+
+.toggle {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  #header ul {
+    position: absolute;
+    top: 80px; /* Adjusted for better visibility */
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: #111;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .logo {
+    color: #fff;
+  }
+
+  #header.active1 ul {
+    opacity: 1;
+    height: calc(100vh - 80px); /* Adjusted for better visibility */
+  }
+
+  #header ul li a {
+    margin: 5px 0;
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .toggle {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-image: url(https://img.icons8.com/material-outlined/48/ffffff/menu--v1.png);
+    cursor: pointer;
+  }
+
+  #header.active1 .toggle {
+    background-image: url(https://img.icons8.com/material-rounded/48/ffffff/multiply--v1.png);
+    background-repeat: no-repeat;
+  }
+}
+
+
+
+.completion {
+  display: block;
+  width: 100%; /* Make both buttons take the full width of the container */
+  padding: 10px; /* Add padding for better appearance */
+  margin-top: 10px; /* Add margin to separate the buttons */
+  text-align: center; /* Center the text within the button */
+  background-color: #ff6464; /* Choose a background color */
+  color: #ffffff; /* Set text color to white */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add a smooth transition for background color change */
+  border: solid black;
+  border-radius: 10px;
+}
+
+/* Style for the Delete button */
+.completion.delete {
+  background-color: #e74c3c; /* Change background color for the Delete button */
+  border: solid black;
+  border-radius: 10px;
+}
+
+.completed,
+.uncompleted {
+  width: 100%/* Set your desired width here */;
+  /* Add other styling properties as needed */
+  padding: 10px;
+  /* margin-bottom: 10px; */
+  border: solid black;
+  border-radius: 10px;
+}
+
+.completed {
+  background-color: rgb(122, 240, 122);
+}
+
+.uncompleted {
+  background-color: red;
+}
+
+
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+  }
+  
+  .cards {
+	display: flex;
+	flex-wrap: wrap;
+  }
+
+  .card-body{
+    border: solid black;
+    border-radius: 20px;
+  }
+  
+  .card {
+	width: 18rem;
+	margin: 10px;
+  }
+  
+  /* Media Queries for Responsive Design */
+  
+  /* For screens smaller than 576px (extra small devices) */
+  @media (max-width: 575.98px) {
+	.card {
+	  width: 100%; /* Cards take full width */
+	}
+  }
+  
+  /* For screens between 576px and 767.98px (small devices) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+	.card {
+	  width: calc(50% - 20px); /* Two cards in a row, with margin */
+	}
+  }
+  
+  /* For screens between 768px and 991.98px (medium devices) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+	.card {
+	  width: calc(33.33% - 20px); /* Three cards in a row, with margin */
+	}
+  }
+  
+  /* For screens between 992px and 1199.98px (large devices) */
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+	.card {
+	  width: calc(25% - 20px); /* Four cards in a row, with margin */
+	}
+  }
+  
+  /* For screens 1200px and larger (extra large devices) */
+  @media (min-width: 1200px) {
+	.card {
+	  width: calc(20% - 20px); /* Five cards in a row, with margin */
+	}
+  }
+
+
+  .list-group-tem {
+    background-color: rgb(16, 253, 63); /* Set the background color to red */
+    color: rgb(255, 255, 255); /* Set the text color to white or any contrasting color */
+    padding: 10px; /* Add padding for better visibility */
+    text-align: center;
+    margin-bottom: 10px;
+    border: solid black;
+    border-radius: 10px;
+  }
+
+  .list-group-em {
+    background-color: rgb(169, 8, 8); /* Set the background color to red */
+    color: rgb(255, 255, 255); /* Set the text color to white or any contrasting color */
+    padding: 10px; /* Add padding for better visibility */
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+</head>
+<body>
+    <div class="container">
+       <!--ring div starts here-->
+       <div id="algn">
+        <div id="container">
+            <p class="head">Login</p>
+            <form action="/login" method="post" class="input-container">
+
+
+                <input type="text" name="username" class="inpt" required placeholder="Username">
+                <input type="password" name="password" class="inpt" required placeholder="Password">
+                <% if(content.length >0){ %>
+                    <p class="error">
+                      <%= content %>
+                    </p>
+            
+                  <% } %>
+
+
+                <input href="btn int" type="submit" class="btn int" value="Login"/>
+            </form>
+        </div>
+        </div>
+  </div>
+  <!--ring div ends here-->
+
+
+    </div>    
+</body>
+</html>

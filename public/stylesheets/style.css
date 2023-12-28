@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+body{
+    font-family: 'Poppins', sans-serif;
+    background-image: url(https://nasemul1.github.io/img_host/peakpx.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+#algn{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 320px;
+    min-height: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+#container .head{
+    font-weight: 700;
+    font-size: larger;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    width: 265px;
+}
+
+.input-container .inpt{
+    padding: 10px;
+    margin: 5px 10px;
+    border: 2px solid white;
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+}
+
+::placeholder {
+    font-weight: 600;
+    color: white;
+    opacity: 1;
+}
+
+.rem-forgot{
+    display: flex;
+    justify-content: space-around;
+    column-gap: 10px;
+    font-size: 11px;
+    font-weight: 400;
+    margin: 8px;
+}
+
+.rem{
+    display: flex;
+    align-items: center;
+}
+
+.rem-forgot span a{
+    text-decoration: none;
+    color: white;
+}
+
+.rem-forgot span a:hover{
+    color: #ffc3d2;
+}
+
+.input-container .btn {
+  margin: 10px 12px; /* Increased top margin for centering */
+  padding: 10px 0;
+  border: none;
+  border-radius: 25px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+}
+
+.input-container .btn:hover{
+    background-color: #37d61b;
+}
+
+#container .footer{
+    font-size: 11px;
+    font-weight: 400;
+}
+
+#container .footer a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    margin: 0 5px;
+}
+
+#container .footer a:hover{
+    color: #ffc3d2;
+}
+
+.error{
+  font-weight: 500;
+  color: red;
+  text-transform: capitalize;
+  margin: 7px 0px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+
+}
