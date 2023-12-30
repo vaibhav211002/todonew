@@ -43,26 +43,45 @@ app.post('/home/:id', isloggedin, async function(req, res) {
 
 
 
-app.post('/signup', function(req, res, next) {
-  const {username,fullname,email,password} = req.body;
-  // console.log(req.body);
+app.post('/signup', async function(req, res, next) {
+  try {
+    const { username, fullname, email, password } = req.body;
+
     const userdata = new usersmodel({
       username,
       fullname,
       email,
-    })
+    });
+
     console.log(userdata);
-    usersmodel.register(userdata,req.body.password)
-    .then(function(){
-        passport.authenticate('local')(req,res,function(){
-            console.log(userdata);
-            res.redirect('/home')
-        })
-    })
-    // console.log(userdata);
 
+    // Use the `register` method with a promise to handle errors
+    await usersmodel.register(userdata, req.body.password);
 
+    // Authentication and redirection after successful registration
+    passport.authenticate('local')(req, res, function() {
+      console.log(userdata);
+      res.redirect('/home');
+    });
+  } catch (err) {
+    if (err.name === 'UserExistsError') {
+      // Handle the case where a user with the same username already exists
+      console.error('User registration failed. User with the same username already exists.');
+      res.render('signup', { error: 'Username is already taken.' }); // Render your signup page with an error message
+    } 
+    if (err.name === 'MongoServerError' && err.code === 11000) {
+      console.error('User registration failed. User with the same username already exists.');
+      res.render('signup', { error: 'Username is already taken.' }); // Render your signup page with an error message
+    } 
+    else {
+      // Handle other registration errors
+      console.error('Registration error:', err.message);
+      res.render('signup', { message: 'Failed to register user.' }); // Render an error view or send an error response
+    }
+  }
 });
+
+
 
 
 
