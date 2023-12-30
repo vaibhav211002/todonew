@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 const plm = require('passport-local-mongoose')
 
-mongoose.connect("mongodb://127.0.0.1:27017/todo_list")
+//  
+// mongodb+srv://vaibhav_2110:7bquaFmy1YmXfglh@cluster0.ua7fuon.mongodb.net/
+// 
+
+// mongoose.connect("mongodb://127.0.0.1:27017/todo_list")
 // Define the user schema
 const userSchema = new mongoose.Schema({
   username: {
