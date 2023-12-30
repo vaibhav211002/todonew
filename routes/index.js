@@ -71,7 +71,7 @@ app.post('/signup', async function(req, res, next) {
     } else {
       // Handle other registration errors
       console.error('Registration error:', err.message);
-      res.render('error', { message: 'Failed to register user.' }); // Render an error view or send an error response
+      res.render('signup', { message: 'Failed to register user.' }); // Render an error view or send an error response
     }
   }
 });
