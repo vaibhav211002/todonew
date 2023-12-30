@@ -69,7 +69,7 @@ app.post('/signup', async function(req, res, next) {
       console.error('User registration failed. User with the same username already exists.');
       res.render('signup', { error: 'Username is already taken.' }); // Render your signup page with an error message
     } 
-    if (err.name === 'MongoServerError' && err.code === 11000) {
+    if (err.name === 'MongoServerError' || err.code === 11000) {
       console.error('User registration failed. User with the same username already exists.');
       res.render('signup', { error: 'Username is already taken.' }); // Render your signup page with an error message
     } 
