@@ -64,11 +64,16 @@ app.post('/signup', async function(req, res, next) {
       res.redirect('/home');
     });
   } catch (err) {
-    if (err.name === 'UserExistsError'|| (err.name === 'MongoServerError' && err.code === 11000)) {
+    if (err.name === 'UserExistsError') {
       // Handle the case where a user with the same username already exists
       console.error('User registration failed. User with the same username already exists.');
       res.render('signup', { error: 'Username is already taken.' }); // Render your signup page with an error message
-    } else {
+    } 
+    if (err.name === 'MongoServerError' && err.code === 11000) {
+      console.error('User registration failed. User with the same username already exists.');
+      res.render('signup', { error: 'Username is already taken.' }); // Render your signup page with an error message
+    } 
+    else {
       // Handle other registration errors
       console.error('Registration error:', err.message);
       res.render('signup', { message: 'Failed to register user.' }); // Render an error view or send an error response
