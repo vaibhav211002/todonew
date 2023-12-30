@@ -64,7 +64,7 @@ app.post('/signup', async function(req, res, next) {
       res.redirect('/home');
     });
   } catch (err) {
-    if (err.name === 'UserExistsError') {
+    if (err.name === 'UserExistsError'|| (err.name === 'MongoServerError' && err.code === 11000)) {
       // Handle the case where a user with the same username already exists
       console.error('User registration failed. User with the same username already exists.');
       res.render('signup', { error: 'Username is already taken.' }); // Render your signup page with an error message
