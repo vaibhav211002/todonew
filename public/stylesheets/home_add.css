@@ -7,8 +7,9 @@
 }
 
 body {
-  background-image: url(https://nasemul1.github.io/img_host/peakpx.jpg);
+  background-image: url(https://wallpapercave.com/dwp1x/wp9141011.jpg);
   font-family: "Poppins", sans-serif;
+  height: 100vh;
 }
 
 #header {
@@ -38,6 +39,9 @@ body {
   border-bottom: 3px solid red;
 }
 
+.bg-customcolor {
+  background-color: #000000; /* Replace with your desired color code */
+}
 #header ul li img {
   margin-right: 30px;
 }
@@ -45,6 +49,9 @@ body {
 .toggle {
   display: none;
 }
+
+
+
 
 @media (max-width: 400px) {
   #header ul {
@@ -135,11 +142,12 @@ body {
   background-color: #f0f0f0;
 } */
 
-.container {
+.containerper {
   width: 80%;
   text-align: center;
   display: flex;
   justify-content: center;
+  /* align-items: center; */
 
 }
 

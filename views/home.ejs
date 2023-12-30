@@ -9,23 +9,48 @@
 
 </head>
 <body>
-    <header id="header">
-        <div class="logo">
-            <h2><b>Pen By <%=user.fullname  %></b></h2>
-        </div>
-        <ul>
-          <li><a href="/home">Home</a></li>
-          <li><a href="/addtask">Add Task</a></li>
-          <li><a href="/logout">LogOut</a></li>
-        </ul>
-        <div class="toggle" onclick="toggle()"></div>
-      </header>
 
-      <div class="container">
+  <nav class="navbar navbar-expand-lg bg-customcolor">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">To-Do Tracker</a>
+      <button class="navbar-toggler bg-white " type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/addtask">Add Task</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/logout">LogOut</a>
+          </li>
+        </ul>
+        <span class="navbar-text text-white">
+          Pen By <%=user.fullname  %>
+        </span>
+      </div>
+    </div>
+  </nav>
+      </nav>
+
+<div>
+  <% if (user.tasks.length==0) { %>
+    <h4 class="textarea">No Task Added !!</h4>
+  <% } %>
+
+
+</div>
+
+      
+
+      <div class="container custom-opacity">
         <div class="cards flex">
             <% user.tasks.forEach(function(post){%>
                 <br>
-                <div class="card" style="width: 18rem;">
+                <div class="card " style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">TASK </h5>
                         <p class="card-text"><%= post.postText %></p>
