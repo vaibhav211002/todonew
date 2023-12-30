@@ -43,26 +43,33 @@ app.post('/home/:id', isloggedin, async function(req, res) {
 
 
 
-app.post('/signup', function(req, res, next) {
-  const {username,fullname,email,password} = req.body;
-  // console.log(req.body);
+app.post('/signup', async function(req, res, next) {
+  try {
+    const { username, fullname, email, password } = req.body;
+
     const userdata = new usersmodel({
       username,
       fullname,
       email,
-    })
+    });
+
     console.log(userdata);
-    usersmodel.register(userdata,req.body.password)
-    .then(function(){
-        passport.authenticate('local')(req,res,function(){
-            console.log(userdata);
-            res.redirect('/home')
-        })
-    })
-    // console.log(userdata);
 
+    // Use the `register` method with a promise to handle errors
+    await usersmodel.register(userdata, req.body.password);
 
+    // Authentication and redirection after successful registration
+    passport.authenticate('local')(req, res, function() {
+      console.log(userdata);
+      res.redirect('/home');
+    });
+  } catch (err) {
+    // Handle registration errors here
+    console.error('Registration error:', err.message);
+    res.render('signup', { message: 'Failed to register user.' }); // Render an error view or send an error response
+  }
 });
+
 
 
 
